@@ -8,11 +8,13 @@ h1 {
 
 .textarea {
   width: 20%;
-  min-height: 20%;
-  background-color: chartreuse;
+  font-size: 16px;
   border: 1px solid black;
-  margin: 8px;
   padding: 5px;
+  margin: 8px;
+  background-color: blue;
+  border-radius: 8px;
+  text-shadow: -1px -1px white, 1px 1px white, -1px 1px white, 1px -1px white;
 }
 
 .btn {
@@ -22,4 +24,93 @@ h1 {
   font-size: 16px;
   border-radius: 8px;
   text-shadow: -1px -1px white, 1px 1px white, -1px 1px white, 1px -1px white;
+}
+
+#faded-background {
+  z-index: 1;
+  background-color: rgba(100, 100, 100, 0.7);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#modal {
+  z-index: 2;
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  width: 15%;
+  padding: 5% 0;
+  background-color: white;
+  text-align: center;
+  border-radius: 1em;
+  border: 2px solid black;
+}
+
+#sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 40%;
+  padding: 5%;
+  background-color: white;
+  border-radius: 1em 0 0 1em;
+  border: 2px solid black;
+}
+
+.slide-in {
+  animation-duration: 0.8s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    right: -60%;
+  }
+  to {
+    right: 0%
+  }
+}
+
+.slide-out {
+  animation-duration: 0.8s;
+  animation-name: slideout;
+}
+
+@keyframes slideout {
+  from {
+    right: 0%
+  }
+  to {
+    right: -60%;
+    display: none;
+  }
+}
+
+#tooltip {
+  position: absolute;
+  top: inherit;
+  left: inherit;
+  background: white;
+  padding: 1%;
+  border: 2px solid black;
+}
+
+#tooltip:before {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #000;
+  border-right: 0px solid #000;
+  border-bottom: 0px solid #000;
+  border-left: 2px solid #000;
+  top: -5px;
+  left: 50%;
+  margin-left: -3px;
+  content: '';
+  transform: rotate(45deg);
+  background: #fff;
 }
