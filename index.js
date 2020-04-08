@@ -31,15 +31,19 @@ window.addEventListener("DOMContentLoaded", () => {
   })
 
   tooltipArea.addEventListener("mouseenter", e => {
-    console.log("bottom pixels", e.target.offsetTop + e.target.clientHeight)
-    console.log("right-most pixels", e.target.offsetLeft + e.target.clientWidth)
-    console.log("center of the element", e.target.offsetLeft + (e.target.clientWidth/2))
     let tooltip = document.createElement('section')
     tooltip.id = "tooltip"
     tooltip.innerHTML ="Sample Tooltip"
+
     body.append(tooltip)
-    tooltip.style.cssText = `top: ${e.target.offsetTop + e.target.clientHeight + 8}px; left: ${e.target.offsetLeft + (e.target.clientWidth/2)-(tooltip.clientWidth/2)}px`
-    console.log(tooltip.clientWidth)
+
+    const howFarElementIsFromTop = e.target.offsetTop
+    const heightOfElement = e.target.clientHeight
+    const howFarElementIsFromLeft = e.target.offsetLeft
+    const widthOfElement = e.target.clientWidth
+    const widthOfTooltip = tooltip.clientWidth
+
+    tooltip.style.cssText = `top: ${howFarElementIsFromTop + heightOfElement + 8}px; left: ${howFarElementIsFromLeft + (widthOfElement/2)-(widthOfTooltip/2)}px;`
   })
 
   tooltipArea.addEventListener("mouseleave", e => {
