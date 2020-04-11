@@ -6,7 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector('body')
 
   modalBtn.addEventListener("click", e => {
-    e.preventDefault();
     let modal = document.createElement('section')
     modal.id = "modal"
     modal.innerHTML = "Sample Modal"
@@ -14,8 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     fadedBackground()
   })
 
-  sidebarBtn.addEventListener("click", e => {
-    e.preventDefault;
+  sidebarBtn.addEventListener("click", () => {
     let existingSidebar = document.getElementById('sidebar')
     if (existingSidebar){
       removeSidebar(existingSidebar)

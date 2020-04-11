@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Modal from './components/modal'
@@ -36,7 +35,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <h1>Hello World</h1>
+      <h1>Modals, Sidebars, Tooltips, Oh my!</h1>
 
       <button id='modalBtn' className='btn' onClick={() => toggleModal(true)}>Modal</button>
       <br/>

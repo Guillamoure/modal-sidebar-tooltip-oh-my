@@ -15,6 +15,7 @@ h1 {
   background-color: blue;
   border-radius: 8px;
   text-shadow: -1px -1px white, 1px 1px white, -1px 1px white, 1px -1px white;
+  font-family: system-ui;
 }
 
 .btn {
@@ -51,6 +52,7 @@ h1 {
 
 #sidebar {
   position: absolute;
+  z-index: 1;
   right: 0;
   top: 0;
   height: 100vh;
@@ -90,14 +92,11 @@ h1 {
   }
   to {
     right: -60%;
-    display: none;
   }
 }
 
 #tooltip {
   position: absolute;
-  top: inherit;
-  left: inherit;
   background: white;
   padding: 1%;
   border: 2px solid black;
